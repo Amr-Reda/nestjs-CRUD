@@ -23,7 +23,7 @@ export class UserService {
     }
 
     async readById(id): Promise<User> {
-        return await this.userModel.findById(id).exec();
+        return await this.userModel.findById(id).select('-password').exec();
     }
 
     async update(id, user: User): Promise<User> {

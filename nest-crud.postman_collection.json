@@ -1,0 +1,297 @@
+{
+	"info": {
+		"_postman_id": "613fb0a4-654e-4981-9c6c-26b8d282f15a",
+		"name": "nest-crud",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5706513"
+	},
+	"item": [
+		{
+			"name": "POST /auth/register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"John\",\n    \"email\": \"john@mail.com\",\n    \"password\": \"Password123#\",\n    \"image\": \"https://example.png\",\n    \"role\": \"Admin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /auth/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"john@mail.com\",\n    \"password\": \"Password123#\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDY1MjM1NjU0OWYwNDI2YjMwNzI0ZDciLCJuYW1lIjoiSm9obiIsImltYWdlIjoiaHR0cHM6Ly9leGFtcGxlLnBuZyIsInJvbGUiOiJBZG1pbiIsIl9fdiI6MCwiaWF0IjoxNjg0MzQ5ODQyLCJleHAiOjE2ODQzNTM0NDJ9.-iNWHrrURl71AIdmKD1-UTd0ppUI26MEaSczZa1MRG8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"amr\",\n    \"email\": \"test1@mail.com\",\n    \"password\": \"123\",\n    \"image\": \"image\",\n    \"role\": \"User\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /users/:id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDY1MjM1NjU0OWYwNDI2YjMwNzI0ZDciLCJuYW1lIjoiSm9obiIsImltYWdlIjoiaHR0cHM6Ly9leGFtcGxlLnBuZyIsInJvbGUiOiJBZG1pbiIsIl9fdiI6MCwiaWF0IjoxNjg0MzQ5ODQyLCJleHAiOjE2ODQzNTM0NDJ9.-iNWHrrURl71AIdmKD1-UTd0ppUI26MEaSczZa1MRG8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"amr\",\n    \"email\": \"test1@mail.com\",\n    \"password\": \"123\",\n    \"image\": \"image\",\n    \"role\": \"User\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/6464c2216b13381a32b32181",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"6464c2216b13381a32b32181"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDY1MjM1NjU0OWYwNDI2YjMwNzI0ZDciLCJuYW1lIjoiSm9obiIsImltYWdlIjoiaHR0cHM6Ly9leGFtcGxlLnBuZyIsInJvbGUiOiJBZG1pbiIsIl9fdiI6MCwiaWF0IjoxNjg0MzQ5ODQyLCJleHAiOjE2ODQzNTM0NDJ9.-iNWHrrURl71AIdmKD1-UTd0ppUI26MEaSczZa1MRG8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"amr\",\n    \"email\": \"test@mail.com\",\n    \"password\": \"123456\",\n    \"image\": \"https://example.png\",\n    \"role\": \"User\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT /users/:id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDY1MjM1NjU0OWYwNDI2YjMwNzI0ZDciLCJuYW1lIjoiSm9obiIsImltYWdlIjoiaHR0cHM6Ly9leGFtcGxlLnBuZyIsInJvbGUiOiJBZG1pbiIsIl9fdiI6MCwiaWF0IjoxNjg0MzQ5ODQyLCJleHAiOjE2ODQzNTM0NDJ9.-iNWHrrURl71AIdmKD1-UTd0ppUI26MEaSczZa1MRG8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"new name\",\n   \"image\": \"https://example.png\",\n    \"role\": \"User\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/6464c2216b13381a32b32181",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"6464c2216b13381a32b32181"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE /users/:id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDY1MjM1NjU0OWYwNDI2YjMwNzI0ZDciLCJuYW1lIjoiSm9obiIsImltYWdlIjoiaHR0cHM6Ly9leGFtcGxlLnBuZyIsInJvbGUiOiJBZG1pbiIsIl9fdiI6MCwiaWF0IjoxNjg0MzQ5ODQyLCJleHAiOjE2ODQzNTM0NDJ9.-iNWHrrURl71AIdmKD1-UTd0ppUI26MEaSczZa1MRG8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"amr\",\n    \"email\": \"test5@mail.com\",\n    \"password\": \"123\",\n    \"image\": \"image\",\n    \"role\": \"Admin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/6464c2216b13381a32b32181",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"6464c2216b13381a32b32181"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDY1MjM1NjU0OWYwNDI2YjMwNzI0ZDciLCJuYW1lIjoiSm9obiIsImltYWdlIjoiaHR0cHM6Ly9leGFtcGxlLnBuZyIsInJvbGUiOiJBZG1pbiIsIl9fdiI6MCwiaWF0IjoxNjg0MzQ5ODQyLCJleHAiOjE2ODQzNTM0NDJ9.-iNWHrrURl71AIdmKD1-UTd0ppUI26MEaSczZa1MRG8",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
