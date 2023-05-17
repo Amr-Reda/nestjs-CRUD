@@ -57,6 +57,11 @@ export class UserController {
     @UseGuards(JwtAuthGuard, RoleGuard)
     @Put('/:id')
     async update(@Res() res, @Param('id') id, @Body() user: User) {
+        // delete email and password because it's not to allow to update them throw this endpoint
+        // we can create a new endpoint for reset email and password
+        delete user.password
+        delete user.email
+        
         const updatedUser = await this.userService.update(id, user);
         if (!updatedUser) {
             return res.status(HttpStatus.NOT_FOUND).json({error: 'user not found'})
